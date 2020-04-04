@@ -4,15 +4,19 @@ body {
 }
 
 header {
-    background-color: #10103A;
+    background-color: #5558af;
     color: white;
     text-align: center;
-    padding: 10px;
-    height: 70px;
+    padding-top: 30px;
+    height: 100px;
 }
 
 div {
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
+}
+
+aside {
+    border: 1px solid black;
 }

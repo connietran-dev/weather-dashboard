@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -22,11 +22,13 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <aside class="col-2">
-                <label for="">Search for a City:</label>
-                <input type="text" aria-label="Search">
+            <aside class="col-3">
+                <form action="submit" id="city-search">
+                    <label for="">Search for a City:</label>
+                    <input type="text" id="city-text" aria-label="Search">
+                </form>
                 <ul>
                     <li>Atlanta</li>
                     <li></li>
@@ -35,24 +37,36 @@
                     <li></li>
                 </ul>
             </aside>
-            <main class="col-10">
-                <div>
-                    <h2>Atlanta (Date)</h2>
-                    <p>Temperature</p>
-                    <p>Humidity</p>
-                    <p>Wind Speed</p>
-                    <p>UV Index</p>
+            <main class="col-9">
+                <div class="container">
+                    <h2 class="city">Atlanta <span>Today (Date)</span></h2>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">Temperature <span class="city"></span></div>
+                        <div class="col">Humidity <span class="humidity"></span></div>
+                        <div class="col">Wind Speed <span class="wind"></span></div>
+                        <div class="col">UV Index <span class="UV"></span></div>
+                    </div>
                 </div>
-                <div>
+                <div class="container">
                     <h2>5-Day Forecast</h2>
-
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">First</div>
+                        <div class="col">Second</div>
+                        <div class="col">Third</div>
+                        <div class="col">Fourth</div>
+                        <div class="col">Fifth</div>
+                    </div>
                 </div>
             </main>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="Assets/search.js"></script>
+
 </body>
 
 </html>
