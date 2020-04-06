@@ -12,6 +12,8 @@ $(document).ready(function () {
         event.preventDefault();
         currentWeather();
         getUVIndex();
+        getForecast();
+
     })
 
 });
@@ -25,7 +27,7 @@ function currentWeather(event) {
     // Sample URL: https://api.openweathermap.org/data/2.5/weather?appid=4a56f566a02550ae1a4ca20559e1de75&q=Atlanta&units=imperial;
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + searchedCity + "&units=imperial";
 
-    console.log("querURL: " + queryURL);
+    console.log("queryURL: " + queryURL);
 
     console.log("City searched: " + $('#city-text').val());
 
@@ -51,26 +53,13 @@ function currentWeather(event) {
 
         $(".humidity").html(`${response.main.humidity} %`);
 
-
-        // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("Humidity: " + response.main.humidity);
-        console.log("Temperature (F): " + temp);
-
     });
 };
 
 
 function getUVIndex() {
 
-    /*
-    API call:
-    http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
-    Parameters:
-    lat, lon - coordinates of the location of your interest (latitude/longitude)
-    Examples of API calls:
-    api.openweathermap.org/data/2.5/uvi?lat=37.75&lon=-122.37
-    */
+// Lat / long are needed for the UV
 
     // First, get lat/long of city from main weather call
     var searchedCity = $('#city-text').val();
