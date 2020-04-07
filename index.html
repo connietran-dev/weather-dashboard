@@ -36,12 +36,7 @@
                     <label for="">Search for a City:</label>
                     <input type="text" id="city-text" aria-label="Search">
                 </form>
-                <ul>
-                    <li>Atlanta</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul id="search-history">
                 </ul>
             </aside>
             <main class="col-9">
@@ -61,11 +56,11 @@
                 <div class="container">
                     <h2>5-Day Forecast</h2>
                     <div class="row d-flex justify-content-between">
-                        <div class="col">First</div>
-                        <div class="col">Second</div>
-                        <div class="col">Third</div>
-                        <div class="col">Fourth</div>
-                        <div class="col">Fifth</div>
+                        <div class="col" data-card="0">First</div>
+                        <div class="col" data-card="1">Second</div>
+                        <div class="col" data-card="2">Third</div>
+                        <div class="col" data-card="3">Fourth</div>
+                        <div class="col" data-card="4">Fifth</div>
                     </div>
                 </div>
             </main>
@@ -76,8 +71,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <script src="Scripts/search.js"></script>
+    <script src="Scripts/weather.js"></script>
     <script src="Scripts/forecast.js"></script>
+    <script src="Scripts/search.js"></script>
 
 </body>
 
