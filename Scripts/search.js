@@ -1,17 +1,41 @@
 // On page load
-var cityList = ["Buenos Aires", "London", "Seoul", "Paris", "San Francisco", "Beijing"];
+// Retrieve array from localStorage. 
+// If empty, then create list items. Then save to local storage
+var cityList = [];
 
-cityList.forEach(element => {
+if (localStorage.getItem('Cities') === null) {
 
-    $('#searchHistory').append(`
-        <li class="searchItem">${element}</li>
-    `);
-});
+    cityList = ["San Francisco", "Beijing", "Seoul", "London", "Seoul", "Buenos Aires"];
 
-$('.searchItem').on('click', function(event) {
+    localStorage.setItem('Cities', JSON.stringify(cityList));
+
+    cityList.forEach(element => {
+        $('#searchHistory').prepend(`
+            <li class="searchItem">${element}</li>
+        `);
+    });
+
+} else {
+
+    cityList = JSON.parse(localStorage.getItem('Cities'));
+
+    cityList.forEach(element => {
+
+        $('#searchHistory').prepend(`
+            <li class="searchItem">${element}</li>
+        `);
+    });
+
+}
+
+
+
+$('.searchItem').on('click', function (event) {
 
     var itemText = event.target.innerText;
+
     $('#city-text').val(itemText);
+
     currentWeather(itemText);
     getUVIndex(itemText);
     getForecast(itemText);
@@ -19,10 +43,16 @@ $('.searchItem').on('click', function(event) {
 });
 
 
-function searchHistory() {
+// If a new city is added, add to the array of cities.
+// Save the cities array to localStorage again.
+function addHistory() {
 
     $('#searchHistory').prepend(`
         <li class="searchItem">${searchedCity}</li>
     `);
+
+    cityList.push(searchedCity);
+
+    localStorage.setItem('Cities', JSON.stringify(cityList));
 
 };

@@ -29,7 +29,7 @@ $(document).ready(function () {
         currentWeather(searchedCity);
         getUVIndex(searchedCity);
         getForecast(searchedCity);
-        searchHistory(searchedCity);
+        addHistory(searchedCity);
 
     })
 
