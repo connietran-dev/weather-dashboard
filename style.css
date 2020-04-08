@@ -24,3 +24,30 @@ aside {
 li {
     list-style-type:none;
 }
+
+#currentDate {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.displayNumber {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.forecastNumber {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.forecastHumid {
+    font-size: 18px;
+}
+
+.units {
+    font-size: 15px;
+    font-weight: 300;
+}

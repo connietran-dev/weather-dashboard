@@ -15,7 +15,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="Assets/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io//apple-touch-icon.png">
@@ -36,31 +36,45 @@
                     <label for="">Search for a City:</label>
                     <input type="text" id="city-text" aria-label="Search">
                 </form>
-                <ul id="search-history">
-                </ul>
+                <div id="searchHistory">
+                </div>
             </aside>
             <main class="col-9">
                 <div class="container">
-                    <h2 class="city">Atlanta <span>Today (Date)</span></h2>
                     <div class="row d-flex justify-content-between">
-                        <div class="col">Temperature <p class="temp"></p>
+                        <h2 class="city">Today's Weather</h2>
+                        <span id="currentDate"></span>
+                        <img id="current-icon" src="http://openweathermap.org/img/wn/10d.png">
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">Temperature <p class="temp displayNumber"></p>
                         </div>
-                        <div class="col">Humidity <p class="humidity"></p>
+                        <div class="col">Humidity <p class="humidity displayNumber"></p>
                         </div>
-                        <div class="col">Wind Speed <p class="wind"></p>
+                        <div class="col">Wind Speed <p class="wind displayNumber"></p>
                         </div>
-                        <div class="col">UV Index <p class="UV"></p>
+                        <div class="col">UV Index <p class="UV displayNumber"></p>
                         </div>
                     </div>
                 </div>
                 <div class="container">
                     <h2>5-Day Forecast</h2>
                     <div class="row d-flex justify-content-between">
-                        <div class="col" data-card="0">First</div>
-                        <div class="col" data-card="1">Second</div>
-                        <div class="col" data-card="2">Third</div>
-                        <div class="col" data-card="3">Fourth</div>
-                        <div class="col" data-card="4">Fifth</div>
+                        <div class="col" data-card="0">
+                            <h4 class="forecastDate"></h4>
+                        </div>
+                        <div class="col" data-card="1">
+                            <h4 class="forecastDate"></h4>
+                        </div>
+                        <div class="col" data-card="2">
+                            <h4 class="forecastDate"></h4>
+                        </div>
+                        <div class="col" data-card="3">
+                            <h4 class="forecastDate"></h4>
+                        </div>
+                        <div class="col" data-card="4">
+                            <h4 class="forecastDate"></h4>
+                        </div>
                     </div>
                 </div>
             </main>
@@ -71,7 +85,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <script src="Scripts/weather.js"></script>
+    <script src="Scripts/main.js"></script>
     <script src="Scripts/forecast.js"></script>
     <script src="Scripts/search.js"></script>
 

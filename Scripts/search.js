@@ -1,16 +1,20 @@
 function searchHistory() {
 
-    console.log("hello");
-
-    var searchedCity = $('#city-text').val().trim();
-
-    // var searchItem = $('<li>');
-    // searchItem.text(searchedCity);
-    // var searchHistory = $('#search-history');
-    // searchHistory.prepend(searchItem);
-
-    $('#search-history').prepend(`
-        <li>${searchedCity}</li>    
+    $('#searchHistory').prepend(`
+        <li class="searchItem">${searchedCity}</li>
     `); 
+
+    $('.searchItem').on('click', function(event) {
+
+        console.log('hello');
+
+        var itemText = event.target.innerText;
+
+        $('#city-text').val(itemText);
+
+        currentWeather(itemText);
+        getForecast(itemText);
+
+    });
 
 };

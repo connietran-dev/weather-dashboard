@@ -1,14 +1,12 @@
 // Main file for getting 5-day forecast
 
-function getForecast() {
-
-    var searchedCity = $('#city-text').val().trim();
+function getForecast(searchedCity) {
 
     // Sample URL: http://api.openweathermap.org/data/2.5/forecast?q={city%20name}&appid={your%20api%20key}
     // http://api.openweathermap.org/data/2.5/forecast?q=atlanta&appid=4a56f566a02550ae1a4ca20559e1de75
     var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?appid=" + APIKey + "&q=" + searchedCity + "&units=imperial";
 
-    console.log("Forecast URL: " + forecastURL);
+    // console.log("Forecast URL: " + forecastURL);
 
     $.ajax({
         url: forecastURL,
@@ -40,8 +38,8 @@ function getForecast() {
 
             forecastCard.html(`
                 <h4>${forecastDay}</h4>
-                <p>${forecastTemp} &#176;F</p>
-                <p>${forecastHumid} %</p>
+                <p class="forecastNumber">${forecastTemp} <span class="units">&#176;F</span></p>
+                <p class="forecastHumid">${forecastHumid} <span class="units">%</span></p>
             `);
 
             forecastStart += 8;
