@@ -26,20 +26,20 @@ $(document).ready(function () {
     $('#city-search').submit(function () {
         event.preventDefault();
         searchedCity = $('#city-text').val().trim();
-        currentWeather();
-        getUVIndex();
-        getForecast();
-        searchHistory();
+        currentWeather(searchedCity);
+        getUVIndex(searchedCity);
+        getForecast(searchedCity);
+        searchHistory(searchedCity);
 
     })
 
 });
 
 
-function currentWeather(searchedCity) {
+function currentWeather(cityToSearch) {
 
     // Sample URL: https://api.openweathermap.org/data/2.5/weather?appid=4a56f566a02550ae1a4ca20559e1de75&q=Atlanta&units=imperial;
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + searchedCity + "&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + cityToSearch + "&units=imperial";
 
     // console.log("queryURL: " + queryURL);
 
@@ -73,13 +73,13 @@ function currentWeather(searchedCity) {
 };
 
 
-function getUVIndex(searchedCity) {
+function getUVIndex(cityToSearch) {
 
     // Lat / long are needed for the UV
 
     // First, get lat/long of city from main weather call
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + searchedCity;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=" + APIKey + "&q=" + cityToSearch;
 
     $.ajax({
         url: queryURL,

@@ -1,10 +1,10 @@
 // Main file for getting 5-day forecast
 
-function getForecast(searchedCity) {
+function getForecast(cityToSearch) {
 
     // Sample URL: http://api.openweathermap.org/data/2.5/forecast?q={city%20name}&appid={your%20api%20key}
     // http://api.openweathermap.org/data/2.5/forecast?q=atlanta&appid=4a56f566a02550ae1a4ca20559e1de75
-    var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?appid=" + APIKey + "&q=" + searchedCity + "&units=imperial";
+    var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?appid=" + APIKey + "&q=" + cityToSearch + "&units=imperial";
 
     // console.log("Forecast URL: " + forecastURL);
 
