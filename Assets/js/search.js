@@ -1,19 +1,27 @@
 // On page load
 // Retrieve array from localStorage. 
-// If empty, then create list items. Then save to local storage
+// If empty, then create list items with default cities
+// Then search for first in array
 var cityList = [];
 
 if (localStorage.getItem('Cities') === null) {
 
-    cityList = ["San Francisco", "Beijing", "Seoul", "London", "Seoul", "Buenos Aires"];
+    cityList = ["Atlanta", "Buenos Aries", "Seoul", "London", "San Francisco", "Beijing"];
 
     localStorage.setItem('Cities', JSON.stringify(cityList));
 
     cityList.forEach(element => {
-        $('#searchHistory').prepend(`
+        $('#searchHistory').append(`
             <li class="searchItem">${element}</li>
         `);
     });
+
+    currentWeather(cityList[0]);
+    getUVIndex(cityList[0]);
+    getForecast(cityList[0]);
+
+
+// Else if local storage is not empty, create list items from cities already stored in local storage
 
 } else {
 
@@ -21,10 +29,14 @@ if (localStorage.getItem('Cities') === null) {
 
     cityList.forEach(element => {
 
-        $('#searchHistory').prepend(`
+        $('#searchHistory').append(`
             <li class="searchItem">${element}</li>
         `);
     });
+
+    currentWeather(cityList[0]);
+    getUVIndex(cityList[0]);
+    getForecast(cityList[0]);
 
 }
 
@@ -51,7 +63,7 @@ function addHistory() {
         <li class="searchItem">${searchedCity}</li>
     `);
 
-    cityList.push(searchedCity);
+    cityList.unshift(searchedCity);
 
     localStorage.setItem('Cities', JSON.stringify(cityList));
 

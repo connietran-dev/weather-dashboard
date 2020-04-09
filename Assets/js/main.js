@@ -1,8 +1,8 @@
 // JS for default page behavior
 
-$("#currentDate").text(moment().format('ddd Do'));
+$("#currentDate").text("Today " + moment().format('ddd Do'));
 
-
+// Generate cards 5-day forecast based on current date
 for (let i = 0; i < 5; i++) {
 
     var startForecast = i + 1;
