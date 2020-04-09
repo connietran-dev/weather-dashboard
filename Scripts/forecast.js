@@ -33,7 +33,7 @@ function getForecast(cityToSearch) {
             var forecastDay = moment(response.list[forecastStart].dt_txt).format('ddd');
 
             var forecastTemp = Math.round(response.list[forecastStart].main.temp);
-            
+
             var forecastHumid = response.list[forecastStart].main.humidity;
 
             forecastCard.html(`
