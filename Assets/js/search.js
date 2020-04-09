@@ -6,7 +6,7 @@ var cityList = [];
 
 if (localStorage.getItem('Cities') === null) {
 
-    cityList = ["Atlanta", "Buenos Aries", "Seoul", "London", "San Francisco", "Beijing"];
+    cityList = ["Atlanta", "Buenos Aires", "Seoul", "London", "San Francisco", "Beijing"];
 
     localStorage.setItem('Cities', JSON.stringify(cityList));
 
