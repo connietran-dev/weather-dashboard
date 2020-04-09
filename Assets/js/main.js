@@ -1,4 +1,4 @@
-// This JS file will be the main file that drives the city search
+// JS for default page behavior
 
 $("#currentDate").text(moment().format('ddd Do'));
 
