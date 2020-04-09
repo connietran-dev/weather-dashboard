@@ -26,53 +26,55 @@
 </head>
 
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
+    <header class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <h1>Weather Dashboard</h1>
+            <img id="current-icon" src="http://openweathermap.org/img/wn/10d@2x.png">
+        </div>
     </header>
-    <div class="container">
+    <div class="container displayContainer overallCard">
         <div class="row">
-            <aside class="col-3">
+            <aside class="col-sm-3 displayContainer order-12 order-sm-1">
                 <form action="submit" id="city-search">
-                    <label for="">Search for a City:</label>
+                    <strong><label for="">Search for a City:</label></strong>
                     <input type="text" id="city-text" aria-label="Search">
                 </form>
-                <div id="searchHistory">
+                <div id="searchHistory" class="d-sm-inline-block d-none">
                 </div>
             </aside>
-            <main class="col-9">
-                <div class="container">
-                    <div class="row d-flex justify-content-between">
+            <main class="col-sm-9 order-1 order-sm-12">
+                <div class="container displayContainer mainContainer">
+                    <div class="row">
                         <h2 class="city">Today's Weather</h2>
                         <span id="currentDate"></span>
-                        <img id="current-icon" src="http://openweathermap.org/img/wn/10d.png">
                     </div>
                     <div class="row d-flex justify-content-between">
-                        <div class="col">Temperature <p class="temp displayNumber"></p>
+                        <div class="col displayCard">Temperature <p class="temp displayNumber"></p>
                         </div>
-                        <div class="col">Humidity <p class="humidity displayNumber"></p>
+                        <div class="col displayCard">Humidity <p class="humidity displayNumber"></p>
                         </div>
-                        <div class="col">Wind Speed <p class="wind displayNumber"></p>
+                        <div class="col displayCard">Wind Speed <p class="wind displayNumber"></p>
                         </div>
-                        <div class="col">UV Index <p class="UV displayNumber"></p>
+                        <div class="col displayCard">UV Index <p class="UV displayNumber"></p>
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container displayContainer mainContainer">
                     <h2>5-Day Forecast</h2>
                     <div class="row d-flex justify-content-between">
-                        <div class="col" data-card="0">
+                        <div class="col displayCard" data-card="0">
                             <h4 class="forecastDate"></h4>
                         </div>
-                        <div class="col" data-card="1">
+                        <div class="col displayCard" data-card="1">
                             <h4 class="forecastDate"></h4>
                         </div>
-                        <div class="col" data-card="2">
+                        <div class="col displayCard" data-card="2">
                             <h4 class="forecastDate"></h4>
                         </div>
-                        <div class="col" data-card="3">
+                        <div class="col displayCard" data-card="3">
                             <h4 class="forecastDate"></h4>
                         </div>
-                        <div class="col" data-card="4">
+                        <div class="col displayCard" data-card="4">
                             <h4 class="forecastDate"></h4>
                         </div>
                     </div>
