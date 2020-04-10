@@ -1,6 +1,6 @@
 /* HEADER */
 h1 {
-    font-size: 60px;
+    font-size: 54px;
     color: white;
     font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -47,7 +47,7 @@ body {
 .mainContainer {
     min-height: 200px;
     background-color: white;
-    padding: 12px;
+    padding: 20px;
 }
 
 .displayCard {
@@ -64,6 +64,7 @@ body {
 
 aside {
     background-color: white;
+    padding: 0;
 }
 
 input {
@@ -143,7 +144,7 @@ h4 {
 
 @media (max-width:400px) {
     h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
     #current-icon {
         height: 60px;
