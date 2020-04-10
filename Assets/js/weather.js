@@ -19,7 +19,6 @@ function currentWeather(cityToSearch) {
         var temp = Math.round(response.main.temp);
         $(".temp").html(`${temp}`);
         $(".temp").append(`<span class="units">&#176;F</span>`);
-        console.log(temp);
 
         $(".humidity").html(`${response.main.humidity} `);
         $(".humidity").append(`<span class="units">%</span>`);

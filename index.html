@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Lato:100,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css" />
 
@@ -31,7 +31,7 @@
     <header class="container-fluid">
         <div class="row d-flex justify-content-center">
             <h1>Weather Dashboard</h1>
-            <img id="current-icon" src="http://openweathermap.org/img/wn/10d@2x.png">
+            <img id="headerIcon" src="http://openweathermap.org/img/wn/10d@2x.png">
         </div>
     </header>
 
@@ -55,13 +55,13 @@
 
                 <!-- CURRENT WEATHER -->
                 <div class="container displayContainer mainContainer">
-                    <div class="row">
+                    <div class="row align-items-center">
                         <h2 class="city">Today's Weather</h2>
                         <span id="currentDate"></span>
-                        <span id="currentDescription"></span>
+                        <span id="currentDescription" class="weatherDescription"></span>
                         <img id="currentIcon">
                     </div>
-                    <div class="row d-flex justify-content-between">
+                    <div class="row justify-content-between">
                         <div class="col displayCard">
                             <h4>Temperature</h4> 
                             <p class="temp displayNumber"></p>

@@ -47,7 +47,7 @@ function getForecast(cityToSearch) {
             forecastCard.html(`
                 <h4>${forecastDay}</h4>
                 <p class="forecastNumber">${forecastTemp} <span class="units">&#176;F</span></p>
-                <p>${forecastDescription}</p>
+                <p class="weatherDescription">${forecastDescription}</p>
                 <img src="${iconURL}">
                 <p class="forecastHumid">${forecastHumid} <span class="units">%</span></p>
             `);
