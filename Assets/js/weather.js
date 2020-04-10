@@ -16,12 +16,10 @@ function currentWeather(cityToSearch) {
 
         $("#currentDate").text(moment(response.dt).format('ddd Do'));
 
-        var currentIcon = response.weather.icon;
-        console.log(currentIcon);
-
         var temp = Math.round(response.main.temp);
         $(".temp").html(`${temp}`);
         $(".temp").append(`<span class="units">&#176;F</span>`);
+        console.log(temp);
 
         $(".humidity").html(`${response.main.humidity} `);
         $(".humidity").append(`<span class="units">%</span>`);
@@ -30,6 +28,15 @@ function currentWeather(cityToSearch) {
         $(".wind").html(`${wind}`);
         $(".wind").append(`<span class="units">mph</span>`);
 
+        // Get icons for current weather
+        var currentIcon = response.weather[0].icon;
+
+        // https://openweathermap.org/img/wn/10d@2x.png
+        var iconURL = "https://openweathermap.org/img/wn/" + currentIcon + ".png";
+        
+        $('#currentIcon').attr("src", iconURL);
+
+        $('#currentDescription').text(response.weather[0].description);
 
     });
 };
@@ -64,23 +71,18 @@ function getUVIndex(cityToSearch) {
 
             // Set background color for UV index
             if (response.value <= 2) {
-                console.log( "green "); 
                 $('.UV').css('background-color', '#8DC443');
                 $('.UV').css('color', 'white');
             } else if (response.value > 2 && response.value <= 5) {
-                console.log("yellow");
                 $('.UV').css('background-color', '#FDD835');
                 $('.UV').css('color', 'white');
             } else if (response.value > 5 && response.value <= 7) {
-                console.log("orange");
                 $('.UV').css('background-color', '#FFB301');
                 $('.UV').css('color', 'white');
             } else if (response.value > 7 && response.value <= 10) {
-                console.log("red");
                 $('.UV').css('background-color', '#D1394A');
                 $('.UV').css('color', 'white');
             } else if (response.value > 10) {
-                console.log("purple");
                 $('.UV').css('background-color', '#954F71');
                 $('.UV').css('color', 'white');
             }

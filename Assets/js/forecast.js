@@ -36,9 +36,19 @@ function getForecast(cityToSearch) {
 
             var forecastHumid = response.list[forecastStart].main.humidity;
 
+            // Get icons for current weather
+            var forecastIcon = response.list[forecastStart].weather[0].icon;
+
+            // https://openweathermap.org/img/wn/10d@2x.png
+            var iconURL = "https://openweathermap.org/img/wn/" + forecastIcon + ".png";
+
+            var forecastDescription = response.list[forecastStart].weather[0].description;
+
             forecastCard.html(`
                 <h4>${forecastDay}</h4>
                 <p class="forecastNumber">${forecastTemp} <span class="units">&#176;F</span></p>
+                <p>${forecastDescription}</p>
+                <img src="${iconURL}">
                 <p class="forecastHumid">${forecastHumid} <span class="units">%</span></p>
             `);
 
